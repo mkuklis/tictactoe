@@ -1,0 +1,123 @@
+#ttt {
+  margin: 0 auto;
+}
+
+#ttt .board {
+  border: 1px solid #000000;
+}
+
+#ttt .square {
+  float: left;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+#ttt .square:hover {
+  background-color: #FFFF88;
+}
+
+#ttt .mark {
+  margin: 0 auto;
+  font-family: Sans-serif, Arial, Verdana; 
+  text-align: center;
+}
+
+#ttt {
+    width: 600px;
+  }
+
+  #ttt .board {
+    width: 600px;
+    height: 600px;
+  }	
+
+  #ttt .square {
+    width: 198px;
+    height: 198px;
+  }
+
+  #ttt .mark {
+    width: 98px;
+    line-height:198px;
+    font-size: 50px;
+}
+
+
+@media only screen and (min-width: 1212px) {
+  #ttt {
+    width: 600px;
+  }
+
+  #ttt .board {
+    width: 600px;
+    height: 600px;
+  }	
+
+  #ttt .square {
+    width: 198px;
+    height: 198px;
+  }
+
+  #ttt .mark {
+    width: 98px;
+    line-height:198px;
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+	#ttt {
+    width: 396px;
+  }
+
+  #ttt .board {
+    width: 396px;
+    height: 396px;
+  }	
+
+  #ttt .square {
+    width: 130px;
+    height: 130px;
+  }
+
+  #ttt .mark {
+    width: 40px;
+    line-height:130px;
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+	#ttt {
+    width: 228px;
+  }
+
+  #ttt .board {
+    width: 228px;
+    height: 228px;
+  }	
+
+  #ttt .square {
+    width: 74px;
+    height: 74px;
+  }
+
+  #ttt .mark {
+    width: 20px;
+    line-height:74px;
+    font-size: 20px;
+  }
+}
+
+#ttt .message {
+  padding-top: 5px;
+  text-align: center;
+}
+
+#ttt #header {
+  text-align: center;
+}
+
+#ttt #footer {
+  text-align: center;
+}
