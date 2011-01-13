@@ -299,6 +299,7 @@
         alpha = -1 * this.INFINITY,
         // store possible moves
         bestmoves = [];
+        
       for (var i = 0, len = moves.length; i < len; i++) {
         newboard = board.copy();
         newboard.move(moves[i], player);
