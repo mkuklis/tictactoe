@@ -1,4 +1,4 @@
-tic tac toe implementation in JavaScript backed by Backbone
+tic tac toe implementation in JavaScript backed by Backbone https://github.com/documentcloud/backbone
 
 Two different strategies are provided:
 1. negamax http://en.wikipedia.org/wiki/Negamax (no alpha beta pruning is used)
