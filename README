@@ -1,0 +1,8 @@
+tic tac toe implementation in JavaScript backed by Backbone
+
+Two different strategies are provided:
+1. negamax http://en.wikipedia.org/wiki/Negamax (no alpha beta pruning is used)
+2. default strategy http://en.wikipedia.org/wiki/Tic-tac-toe
+
+
+TODO: write tests
