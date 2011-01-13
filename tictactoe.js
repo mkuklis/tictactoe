@@ -186,43 +186,43 @@
 
   // solver based on strategy desribed here http://en.wikipedia.org/wiki/Tic-tac-toe
   var Default = function() {
-	  this.twoTaken = [
-	    {t:[0,1],m:2},{t:[1,2],m:0},{t:[0,2],m:1}, // first row
-	    {t:[3,4],m:5},{t:[4,5],m:3},{t:[3,5],m:4}, // second row
-	    {t:[6,7],m:8},{t:[7,8],m:6},{t:[6,8],m:7}, // third row
-	    {t:[0,3],m:6},{t:[0,6],m:3},{t:[3,6],m:0}, // first column
-	    {t:[1,4],m:7},{t:[4,7],m:1},{t:[1,7],m:4}, // second column
-	    {t:[2,5],m:8},{t:[5,8],m:2},{t:[2,8],m:5}, // third column
-	    {t:[0,4],m:8},{t:[4,8],m:0},{t:[0,8],m:4}, // first diagonal
-	    {t:[2,4],m:6},{t:[4,6],m:2},{t:[2,6],m:4}, // second diagonal    
-	  ];
-	  this.bestMoves = [0,2,6,8,1,3,5,7];
+    this.twoTaken = [
+      {t:[0,1],m:2},{t:[1,2],m:0},{t:[0,2],m:1}, // first row
+      {t:[3,4],m:5},{t:[4,5],m:3},{t:[3,5],m:4}, // second row
+      {t:[6,7],m:8},{t:[7,8],m:6},{t:[6,8],m:7}, // third row
+      {t:[0,3],m:6},{t:[0,6],m:3},{t:[3,6],m:0}, // first column
+      {t:[1,4],m:7},{t:[4,7],m:1},{t:[1,7],m:4}, // second column
+      {t:[2,5],m:8},{t:[5,8],m:2},{t:[2,8],m:5}, // third column
+      {t:[0,4],m:8},{t:[4,8],m:0},{t:[0,8],m:4}, // first diagonal
+      {t:[2,4],m:6},{t:[4,6],m:2},{t:[2,6],m:4}, // second diagonal    
+    ];
+    this.bestMoves = [0,2,6,8,1,3,5,7];
   }
 
   Default.prototype = {
-    solve: function(board, player, depth) {
+    solve: function (board, player, depth) {
       var opponent = (player == board.X) ? board.O : board.X;
-    	  if (board.getWinner() > -1) {
+      if (board.getWinner() > -1) {
         return -1;
-    	  }
-    	  else if (board.isFull()) {
-    	    return -1;
-    	  }
-    	  
-    	  var moves = board.getPossibleMoves(),
-    	    defense = null,
-    	    split = null;
-    	  
-    	  // attack/defense
+      }
+      else if (board.isFull()) {
+        return -1;
+      }
+
+      var moves = board.getPossibleMoves(),
+      defense = null,
+      split = null;
+
+      // attack/defense
       for (var i = 0, len = this.twoTaken.length; i < len; i++) {
         var taken = this.twoTaken[i].t,
-    	      moveTo = this.twoTaken[i].m;
-    	      
+          moveTo = this.twoTaken[i].m;
+      
         // attack
         if (board.getSquare(taken[0]) === board.getSquare(taken[1]) 
           && board.getSquare(taken[0]) === player 
           && board.getSquare(moveTo) === 0) {
-          return this.twoTaken[i].m;
+            return this.twoTaken[i].m;
         }
 
         // defense
@@ -230,36 +230,36 @@
           && board.getSquare(taken[0]) === opponent 
           && board.getSquare(moveTo) === 0
           && defense === null) {
-          defense = this.twoTaken[i].m;
+            defense = this.twoTaken[i].m;
         }
 
         // split
         if ((board.getSquare(taken[0]) === 0 || board.getSquare(taken[1]) === 0) 
           && board.getSquare(moveTo) === 0 
           && split === null) {
-          split = this.twoTaken[i].m;
-      	  }
+            split = this.twoTaken[i].m;
+        }
       }
 
       if (defense) {
         return defense;
       }
-    	  
-    	  //check center
-    	  if (board.getSquare(4) == 0) {
-    		  return 4;
-    	  }
+
+      //check center
+      if (board.getSquare(4) == 0) {
+        return 4;
+      }
 
       if (split) {
         return split;
       }
 
-    	  // corners and sides
-    	  for (var i = 0, len = this.bestMoves.length; i < len; i++) {
-    		  if (board.getSquare(this.bestMoves[i]) == 0) {
-    			  return this.bestMoves[i];
-    		  }
-    	  }
+      // corners and sides
+      for (var i = 0, len = this.bestMoves.length; i < len; i++) {
+        if (board.getSquare(this.bestMoves[i]) == 0) {
+          return this.bestMoves[i];
+        }
+      }
     }
   }
 
