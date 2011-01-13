@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="less.css" />
+    	<link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="ttt">
+      <div id="header"></div>
+	    <div class="board">
+	      <div id="square_0" class="square"></div>
+	      <div id="square_1" class="square"></div>
+	      <div id="square_2" class="square"></div>
+	      <div id="square_3" class="square"></div>
+	      <div id="square_4" class="square"></div>
+	      <div id="square_5" class="square"></div>
+	      <div id="square_6" class="square"></div>
+	      <div id="square_7" class="square"></div>
+	      <div id="square_8" class="square"></div>
+	    </div>
+	    <div style="display:none" id="footer">
+	      <div class="message"></div>
+	      <a class="start" href="#">play again</a>
+	    </div>
+	  </div>
+	  <script type="text/javascript" charset="utf-8" src="phonegap-0.9.3.js"></script>      
+    <script src="zepto.min.js"></script>
+	  <script type="text/javascript" src="underscore.js"></script>
+	  <script type="text/javascript" src="backbone.js"></script>
+	  <script type="text/javascript" src="tictactoe.js"></script>
+	  <script type="text/javascript" src="tictactoeview.js"></script>
+	  <script type="text/javascript" charset="utf-8"> 
+      $(document).ready(function(){ 		
+	      var game = TicTacToe.init({computerFirst: false});
+	      new TicTacToeView({model: game});
+	    });
+	  </script>
+  </body>
+</html>
