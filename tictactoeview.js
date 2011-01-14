@@ -13,6 +13,7 @@ var TicTacToeView = Backbone.View.extend({
     this.start();
   },
 
+  // starts game
   start: function() {
 	  this.clearBoard();
 	  this.el.find('#footer').hide();
@@ -26,7 +27,8 @@ var TicTacToeView = Backbone.View.extend({
     $('#square_' + index).html('<div class="mark">' + xo + '</div>');
     $('#square_' + index).unbind();    
   },
-  
+
+  // clears board
   clearBoard: function() {
     this.el.find('.square').html('');
   },
@@ -42,13 +44,13 @@ var TicTacToeView = Backbone.View.extend({
     }, 1000);
   },
   
-  // render draw
+  // renders draw
   renderDraw: function() {
     this.showMessage('draw!');
     this.el.find('.square').unbind();
   },
 
-  // render winner
+  // renders winner
   renderWinner: function(winner) {
     var xo = (winner == 1) ? 'X' : 'O';
     this.showMessage(xo + ' wins!');

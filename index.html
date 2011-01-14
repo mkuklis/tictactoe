@@ -3,7 +3,7 @@
   <head>
     <title>TicTacToe</title>
     <link rel="stylesheet" href="less.css" />
-    	<link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div id="ttt">
@@ -25,12 +25,13 @@
 	    </div>
 	  </div>     
     <script src="zepto.min.js"></script>
+    	
 	  <script type="text/javascript" src="underscore.js"></script>
 	  <script type="text/javascript" src="backbone.js"></script>
 	  <script type="text/javascript" src="tictactoe.js"></script>
 	  <script type="text/javascript" src="tictactoeview.js"></script>
-	  <script type="text/javascript">
-	    $(document).ready(function(){
+	  <script type="text/javascript"> 
+      $(document).ready(function(){ 		
 	      var game = TicTacToe.init({computerFirst: false});
 	      new TicTacToeView({model: game});
 	    });
