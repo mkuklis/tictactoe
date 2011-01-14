@@ -1,10 +1,12 @@
-//   tic tac toe 0.1 game implementation 
-//   with backbone under the hood
-//   Two different strategies are provided:
-//   1. negamax http://en.wikipedia.org/wiki/Negamax (no alpha beta pruning is used)
-//   2. default strategy http://en.wikipedia.org/wiki/Tic-tac-toe
-//
-//   Copyright 2011 Michal Kuklis
+//   **Tic Tac Toe** ver. 0.1  
+//   JavaScript implementation backed by [Backbone](http://documentcloud.github.com/backbone) and 
+//   [zepto](http://zeptojs.com)
+
+//   Two different strategies are provided:  
+//   1. **[negamax](http://en.wikipedia.org/wiki/Negamax)**  
+//   2. **[default](http://en.wikipedia.org/wiki/Tic-tac-toe)** 
+
+//   Copyright 2011 Michal Kuklis  
 //   Released under the MIT and GPL licenses.
 
 (function(){
