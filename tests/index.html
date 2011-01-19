@@ -4,24 +4,22 @@
 <head>
   <title>Jasmine Test Runner</title>
   <link rel="stylesheet" type="text/css" href="jasmine-1.0.1/jasmine.css">
-  <script type="text/javascript" src="jasmine-1.0.1/jasmine.js"></script>
-  <script type="text/javascript" src="jasmine-1.0.1/jasmine-html.js"></script>
+  <script src="jasmine-1.0.1/jasmine.js"></script>
+  <script src="jasmine-1.0.1/jasmine-html.js"></script>
 
   <!-- include source files here... -->
-  <script type="text/javascript" src="../underscore.js"></script>
-	<script type="text/javascript" src="../backbone.js"></script>
-	<script type="text/javascript" src="../tictactoe.js"></script>
+  <script src="../lib/underscore.js"></script>
+	<script src="../lib/backbone.js"></script>
+	<script src="../tictactoe.js"></script>
 
   <!-- include spec files here... -->
-  <script type="text/javascript" src="TicTacToeSpec.js"></script>
-
+  <script src="TicTacToeSpec.js"></script>
 </head>
 <body>
 
-<script type="text/javascript">
+<script>
   jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
   jasmine.getEnv().execute();
 </script>
-
 </body>
 </html>

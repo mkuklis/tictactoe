@@ -24,12 +24,12 @@
 	      <a class="start" href="#">play again</a>
 	    </div>
 	  </div>     
-    <script src="zepto.min.js"></script>
-	  <script type="text/javascript" src="underscore.js"></script>
-	  <script type="text/javascript" src="backbone.js"></script>
-	  <script type="text/javascript" src="tictactoe.js"></script>
-	  <script type="text/javascript" src="tictactoeview.js"></script>
-	  <script type="text/javascript"> 
+    <script src="lib/zepto.min.js"></script>
+	  <script src="lib/underscore.js"></script>
+	  <script src="lib/backbone.js"></script>
+	  <script src="tictactoe.js"></script>
+	  <script src="tictactoeview.js"></script>
+	  <script> 
       $(document).ready(function(){ 		
 	      var game = TicTacToe.init({computerFirst: false});
 	      new TicTacToeView({model: game});
