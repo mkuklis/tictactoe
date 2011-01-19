@@ -144,6 +144,16 @@
       }
       return true;
     },
+    
+    // checks if board is empty
+    isEmpty: function() {
+      for(var i = 0; i < 9; i++) {
+        if (this.board[i] != this.EMPTY) {
+          return false;
+        }
+      }
+      return true;
+    },
 
     // returns value from the board for given index
     getSquare: function(index) {
@@ -152,8 +162,6 @@
 
     // makes move
     move: function(index, player) {
-      if (index < 0 || index > 8)
-        throw ("opps index is not valid: " +  index);
       this.board[index] = player;
     },
     
